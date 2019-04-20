@@ -61,7 +61,6 @@ function signupFunction(user,password,res){
 
       console.log('PGKROJFGIORSIG',response["ops"][0]["_id"]);
       jwt.sign({userId: userId},JwtCle, { expiresIn: '24h' }, (err, token) => {
-        console.log("Putaiin"+JwtCle);
         res.send({
           token:token,
           error:"null"
@@ -113,7 +112,7 @@ function getIdByName(user,client){
     console.log("USER ID TOKEN :"+userIdToken)
     return userIdToken;
   } catch (err) {
-    console.log("TA MERE LA GROSSE PUTE");
+    console.log("error : "+err);
   }
 
   client.close();
